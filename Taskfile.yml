@@ -1,0 +1,11 @@
+version: "3"
+
+tasks:
+  default:
+    - |
+      task build
+      task run
+
+  build: docker build -t tg-ubuntu .
+
+  run: docker run -it --rm tg-ubuntu
