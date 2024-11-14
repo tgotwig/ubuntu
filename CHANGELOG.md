@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 🎉 [Unreleased]
 
+### Added
+
+- fish
+
 ## 🎉 [0.0.0] - 2024-11-14
 
 ### Added

@@ -4,4 +4,6 @@ COPY install.sh /tmp/install.sh
 
 RUN chmod +x /tmp/install.sh && /tmp/install.sh
 
-CMD ["bash"]
+SHELL ["/usr/bin/fish", "-c"]
+
+CMD ["fish"]
