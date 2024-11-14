@@ -25,8 +25,9 @@ jobs:
         with:
           context: .
           tags: |
-            ghcr.io/${{ github.repository }}:${{ github.ref_name }}-24.04
+            ghcr.io/${{ github.repository }}:latest
             ghcr.io/${{ github.repository }}:${{ github.ref_name }}
+            ghcr.io/${{ github.repository }}:${{ github.ref_name }}-24.04
           push: true
           platforms: linux/amd64,linux/arm64
           provenance: false
