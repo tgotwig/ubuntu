@@ -6,4 +6,5 @@ Ubuntu 24.04 with the following extra features:
 - fish
 - nc
 - ping
+- starship
 - z
