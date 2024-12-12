@@ -5,6 +5,7 @@ set -e
 apt update && apt install -y --no-install-recommends \
   ca-certificates \
   curl \
+  dnsutils \
   fish \
   iproute2 \
   iputils-ping \
