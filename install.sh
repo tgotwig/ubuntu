@@ -6,6 +6,7 @@ apt update && apt install -y --no-install-recommends \
   ca-certificates \
   curl \
   fish \
+  iproute2 \
   iputils-ping \
   netcat-openbsd \
 
