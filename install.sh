@@ -20,4 +20,6 @@ echo 'zoxide init fish | source' >> /etc/fish/config.fish
 curl -sS https://starship.rs/install.sh | sh -s -- -y
 echo 'starship init fish | source' >> /etc/fish/config.fish
 
+sh -c "$(curl -sSL https://taskfile.dev/install.sh)" -- -d -b /usr/local/bin
+
 rm -rf /var/lib/apt/lists/*
