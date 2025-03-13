@@ -7,6 +7,7 @@ apt update && apt install -y --no-install-recommends \
   curl \
   dnsutils \
   fish \
+  git \
   iproute2 \
   iputils-ping \
   netcat-openbsd \
