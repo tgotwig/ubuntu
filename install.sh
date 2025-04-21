@@ -12,6 +12,7 @@ apt update && apt install -y --no-install-recommends \
   iputils-ping \
   netcat-openbsd \
   nmap \
+  wget \
 
 curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 echo 'fish_add_path /root/.local/bin' > /etc/fish/config.fish
