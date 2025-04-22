@@ -25,7 +25,7 @@ RUN echo "[2/4] Installing starship..." && \
   echo 'starship init fish | source' >> /etc/fish/config.fish
 
 RUN echo "[3/4] Installing Task runner..." && \
-  sh -c "$(curl -sSL https://taskfile.dev/install.sh)" -- -d -b /usr/local/bin
+  sh -c "$(wget -qO- https://taskfile.dev/install.sh)" -- -d -b /usr/local/bin
 
 RUN echo "[4/4] Installing ASDF..." && \
   arch="$(uname -m)" && \
