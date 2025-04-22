@@ -34,8 +34,13 @@ RUN echo "[4/4] Installing ASDF..." && \
   aarch64) asdf_arch="arm64" ;; \
   *) echo "Unsupported architecture: $arch"; exit 1 ;; \
   esac && \
-  curl -sSfL "https://github.com/asdf-vm/asdf/releases/download/v0.16.7/asdf-v0.16.7-linux-${asdf_arch}.tar.gz" \
-  | tar -xzf - -C /usr/local/bin && \
+  mkdir -p /opt/asdf && \
+  wget -qO - "https://github.com/asdf-vm/asdf/releases/download/v0.16.7/asdf-v0.16.7-linux-${asdf_arch}.tar.gz" \
+  | tar -xzf - -C /opt/asdf && \
+  ln -s /opt/asdf/asdf /usr/local/bin/asdf && \
+  mkdir -p /usr/local/etc/fish/conf.d && \
+  wget -qO /usr/local/etc/fish/conf.d/asdf.fish "https://raw.githubusercontent.com/asdf-vm/asdf/refs/tags/v0.16.7/asdf.fish" && \
+  echo 'source /usr/local/etc/fish/conf.d/asdf.fish' >> /etc/fish/config.fish && \
   echo 'asdf completion fish | source' >> /etc/fish/config.fish
 
 COPY conf/starship.toml /root/.config/starship.toml
