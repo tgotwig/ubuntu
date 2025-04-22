@@ -12,6 +12,7 @@ RUN apt update && apt install -y --no-install-recommends \
   iputils-ping \
   netcat-openbsd \
   nmap \
+  tree \
   wget && \
   rm -rf /var/lib/apt/lists/*
 
