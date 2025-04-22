@@ -11,6 +11,7 @@ RUN apt update && apt install -y --no-install-recommends \
   git \
   iproute2 \
   iputils-ping \
+  jq \
   less \
   mediainfo \
   netcat-openbsd \
