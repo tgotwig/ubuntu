@@ -14,6 +14,7 @@ RUN apt update && apt install -y --no-install-recommends \
   jq \
   less \
   mediainfo \
+  micro \
   netcat-openbsd \
   nmap \
   tree \
