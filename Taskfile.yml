@@ -1,11 +1,7 @@
 version: "3"
 
 tasks:
-  default:
-    - |
-      task build
-      task run
-
+  default: task build && task run
   build: docker build -t tg-ubuntu --progress=plain .
   run: docker run -it --rm tg-ubuntu
 
