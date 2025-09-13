@@ -1,18 +1,21 @@
 version: "3"
 
 tasks:
-  default: task build && task run
+  default: task setup && task build && task run
+  setup:
+    - |
+      ln -f ../dotfiles/starship/.config/starship.toml conf/starship.toml
   build: docker build -t tg-ubuntu --progress=plain .
   run: docker run -it --rm tg-ubuntu
 
   # === amd64 ==================================================
 
-  build-and-run-amd64: task build-amd64 && task run-amd64
+  build-and-run-amd64: task setup && task build-amd64 && task run-amd64
   build-amd64: docker build --platform=linux/amd64 -t tg-ubuntu-amd64 --progress=plain .
   run-amd64: docker run -it --rm tg-ubuntu-amd64
 
   # === arm64 ==================================================
 
-  build-and-run-arm64: task build-arm64 && task run-arm64
+  build-and-run-arm64: task setup && task build-arm64 && task run-arm64
   build-arm64: docker build --platform=linux/arm64 -t tg-ubuntu-arm64 --progress=plain .
   run-arm64: docker run -it --rm tg-ubuntu-arm64
