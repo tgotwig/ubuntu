@@ -35,7 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- dnsutils (delv, dig, host, nslookup)
+- dnsutils (delv, dig, host, mdig, nslookup, nsupdate)
 - iproute2 (bridge, ctstat, ip, lnstat, nstat, rtmon, ss, tc)
 - nmap
 
