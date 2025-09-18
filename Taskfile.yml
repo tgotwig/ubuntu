@@ -4,6 +4,9 @@ tasks:
   default: task setup build run
   setup:
     - |
+      mkdir -p conf/lsd
+      ln -f ../dotfiles/lsd/.config/lsd/colors.yaml conf/lsd/colors.yaml
+      ln -f ../dotfiles/lsd/.config/lsd/config.yaml conf/lsd/config.yaml
       ln -f ../dotfiles/starship/.config/starship.toml conf/starship.toml
   build: docker build -t tg-ubuntu --progress=plain .
   run: docker run -it --rm tg-ubuntu

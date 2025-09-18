@@ -13,6 +13,7 @@ RUN apt update && apt install -y --no-install-recommends \
   iputils-ping \
   jq \
   less \
+  lsd \
   mediainfo \
   micro \
   netcat-openbsd \
@@ -48,6 +49,10 @@ RUN echo "[4/4] Installing ASDF..." && \
   wget -qO /usr/local/etc/fish/conf.d/asdf.fish "https://raw.githubusercontent.com/asdf-vm/asdf/refs/tags/v0.16.7/asdf.fish" && \
   echo 'source /usr/local/etc/fish/conf.d/asdf.fish' >> /etc/fish/config.fish && \
   echo 'asdf completion fish | source' >> /etc/fish/config.fish
+
+COPY conf/lsd/* /root/.config/lsd/
+RUN echo 'abbr ls lsd' >> /etc/fish/config.fish
+RUN echo 'abbr ll lsd -la' >> /etc/fish/config.fish
 
 COPY conf/starship.toml /root/.config/starship.toml
 
