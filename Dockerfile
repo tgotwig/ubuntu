@@ -7,6 +7,7 @@ RUN apt update && apt install -y --no-install-recommends \
   dnsutils \
   fish \
   git \
+  gnupg \
   iproute2 \
   iputils-ping \
   jq \
@@ -18,6 +19,13 @@ RUN apt update && apt install -y --no-install-recommends \
   nmap \
   tree \
   wget && \
+  rm -rf /var/lib/apt/lists/*
+
+RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc && \
+  chmod a+r /etc/apt/keyrings/docker.asc && \
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" > /etc/apt/sources.list.d/docker.list && \
+  apt update && \
+  apt install -y docker-ce-cli docker-compose-plugin && \
   rm -rf /var/lib/apt/lists/*
 
 RUN echo "[1/4] Installing zoxide..." && \
