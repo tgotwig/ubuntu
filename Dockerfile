@@ -20,6 +20,7 @@ RUN apt update && apt install -y --no-install-recommends \
   netcat-openbsd \
   nmap \
   ripgrep \
+  sd \
   tree \
   wget && \
   rm -rf /var/lib/apt/lists/*

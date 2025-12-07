@@ -23,6 +23,7 @@ echo "[nc]" && nc -h 2>&1 | head -1
 echo "[nmap]" && nmap --version | head -2
 echo "[ping]" && ping -V
 echo "[rg]" && rg --version | head -1
+echo "[sd]" && sd --version
 echo "[starship]" && starship --version
 echo "[task]" && task --version
 echo "[tree]" && tree --version
