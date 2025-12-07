@@ -7,13 +7,16 @@ echo "[bat]" && batcat --version
 echo "[cc]" && cc --version
 echo "[curl]" && curl -V
 echo "[dig]" && dig -v
+echo "[docker]" && docker --version
 echo "[dust]" && dust --version
 echo "[fd]" && fdfind --version
 echo "[nslookup]" && nslookup -version
 echo "[fish]" && fish -v
+echo "[gpg]" && gpg --version | head -1
 echo "[ip]" && ip -V
 echo "[jq]" && jq --version
 echo "[less]" && less -V
+echo "[lsd]" && lsd --version
 echo "[mediainfo]" && mediainfo --Version
 echo "[micro]" && micro -version
 echo "[nc]" && nc -h 2>&1 | head -1
