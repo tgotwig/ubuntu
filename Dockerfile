@@ -6,6 +6,7 @@ RUN apt update && apt install -y --no-install-recommends \
   ca-certificates \
   curl \
   dnsutils \
+  fd-find \
   fish \
   git \
   gnupg \
