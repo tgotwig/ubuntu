@@ -7,6 +7,7 @@ echo "[bat]" && batcat --version
 echo "[cc]" && cc --version
 echo "[curl]" && curl -V
 echo "[dig]" && dig -v
+echo "[dust]" && dust --version
 echo "[nslookup]" && nslookup -version
 echo "[fish]" && fish -v
 echo "[ip]" && ip -V

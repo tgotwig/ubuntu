@@ -41,7 +41,17 @@ RUN echo "[2/4] Installing starship..." && \
 RUN echo "[3/4] Installing Task runner..." && \
   sh -c "$(wget -qO- https://taskfile.dev/install.sh)" -- -d -b /usr/local/bin
 
-RUN echo "[4/4] Installing ASDF..." && \
+RUN echo "[4/5] Installing dust..." && \
+  arch="$(uname -m)" && \
+  case "$arch" in \
+  x86_64) dust_arch="x86_64-unknown-linux-musl" ;; \
+  aarch64) dust_arch="aarch64-unknown-linux-musl" ;; \
+  *) echo "Unsupported architecture: $arch"; exit 1 ;; \
+  esac && \
+  wget -qO - "https://github.com/bootandy/dust/releases/download/v1.1.1/dust-v1.1.1-${dust_arch}.tar.gz" \
+  | tar -xzf - -C /usr/local/bin --strip-components=1 dust-v1.1.1-${dust_arch}/dust
+
+RUN echo "[5/5] Installing ASDF..." && \
   arch="$(uname -m)" && \
   case "$arch" in \
   x86_64) asdf_arch="amd64" ;; \
