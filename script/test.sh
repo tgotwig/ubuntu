@@ -1,8 +1,9 @@
 set -e
 
-export PATH="/root/.local/bin:$PATH"
+export PATH="/root/.local/bin:/root/.atuin/bin:$PATH"
 
 echo "[asdf]" && asdf -v
+echo "[atuin]" && atuin --version
 echo "[bat]" && batcat --version
 echo "[cc]" && cc --version
 echo "[curl]" && curl -V

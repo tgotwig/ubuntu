@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- atuin (modern history replacement)
 - ssh
 - sd (modern sed replacement)
 - ripgrep / rg (modern grep replacement)
