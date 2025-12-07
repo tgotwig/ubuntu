@@ -1,6 +1,7 @@
 FROM ubuntu:24.04
 
 RUN apt update && apt install -y --no-install-recommends \
+  bat \
   build-essential \
   ca-certificates \
   curl \
