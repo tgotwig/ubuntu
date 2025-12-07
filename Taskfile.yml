@@ -10,6 +10,17 @@ tasks:
       ln -f ../dotfiles/starship/.config/starship.toml conf/starship.toml
   build: docker build -t tg-ubuntu --progress=plain .
   run: docker run -it --rm tg-ubuntu
+  test:
+    cmds:
+      - |
+        script="script/test.sh"
+        docker build -t tg-ubuntu -q .
+        cid=$(docker create tg-ubuntu sleep infinity)
+        docker start $cid
+        docker exec $cid mkdir -p /script
+        docker cp $script $cid:/$script
+        docker exec $cid bash /$script || true
+        docker rm -f $cid
 
   # === amd64 ==================================================
 
