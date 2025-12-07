@@ -19,6 +19,7 @@ RUN apt update && apt install -y --no-install-recommends \
   micro \
   netcat-openbsd \
   nmap \
+  ripgrep \
   tree \
   wget && \
   rm -rf /var/lib/apt/lists/*

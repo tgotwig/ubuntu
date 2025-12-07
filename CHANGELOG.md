@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- ripgrep / rg (modern grep replacement)
 - fd /fdfind (modern find replacement)
 - dust (modern du replacement)
 - bat / batcat (modern cat replacement)
