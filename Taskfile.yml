@@ -12,24 +12,39 @@ tasks:
   run: docker run -it --rm tg-ubuntu
   test:
     cmds:
-      - |
-        script="script/test.sh"
-        docker build -t tg-ubuntu -q .
-        cid=$(docker create tg-ubuntu sleep infinity)
-        docker start $cid
-        docker exec $cid mkdir -p /script
-        docker cp $script $cid:/$script
-        docker exec $cid bash /$script || true
-        docker rm -f $cid
+      - task: test-arm64
+      - task: test-amd64
 
   # === amd64 ==================================================
 
   build-and-run-amd64: task setup build-amd64 run-amd64
   build-amd64: docker build --platform=linux/amd64 -t tg-ubuntu-amd64 --progress=plain .
   run-amd64: docker run -it --rm tg-ubuntu-amd64
+  test-amd64:
+    cmds:
+      - |
+        script="script/test.sh"
+        docker build --platform=linux/amd64 -t tg-ubuntu-amd64 -q .
+        cid=$(docker create tg-ubuntu-amd64 sleep infinity)
+        docker start $cid
+        docker exec $cid mkdir -p /script
+        docker cp $script $cid:/$script
+        docker exec $cid bash /$script || true
+        docker rm -f $cid
 
   # === arm64 ==================================================
 
   build-and-run-arm64: task setup build-arm64 run-arm64
   build-arm64: docker build --platform=linux/arm64 -t tg-ubuntu-arm64 --progress=plain .
   run-arm64: docker run -it --rm tg-ubuntu-arm64
+  test-arm64:
+    cmds:
+      - |
+        script="script/test.sh"
+        docker build --platform=linux/arm64 -t tg-ubuntu-arm64 -q .
+        cid=$(docker create tg-ubuntu-arm64 sleep infinity)
+        docker start $cid
+        docker exec $cid mkdir -p /script
+        docker cp $script $cid:/$script
+        docker exec $cid bash /$script || true
+        docker rm -f $cid
