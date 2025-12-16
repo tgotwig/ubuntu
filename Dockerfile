@@ -23,6 +23,7 @@ RUN apt update && apt install -y --no-install-recommends \
   ripgrep \
   sd \
   tree \
+  unzip \
   wget && \
   rm -rf /var/lib/apt/lists/*
 

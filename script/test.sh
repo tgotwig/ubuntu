@@ -29,5 +29,6 @@ echo "[ssh]" && ssh -V 2>&1 | head -1
 echo "[starship]" && starship --version
 echo "[task]" && task --version
 echo "[tree]" && tree --version
+echo "[unzip]" && unzip -v | head -1
 echo "[wget]" && wget --version | head -1
 echo "[z]" && zoxide --version
