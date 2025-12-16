@@ -1,0 +1,14 @@
+blocks:
+  - permission
+  - user
+  - group
+  - size
+  - date
+  - name
+
+color:
+  when: auto
+  theme: custom
+
+sorting:
+  dir-grouping: first
