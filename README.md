@@ -8,17 +8,17 @@ Ubuntu 24.04 with the following extra features:
 
 - asdf
 - atuin
-- bat / batcat
-- build-essential (cc)
+- batcat
+- build-essential: cc
 - curl
-- dnsutils (delv, **dig**, host, mdig, **nslookup**, nsupdate)
+- dnsutils: delv, dig, host, mdig, ⭐ nslookup, nsupdate
 - docker
 - dust
-- fd /fdfind
+- fdfind
 - fish
 - git
 - gnupg
-- iproute2 (bridge, ctstat, **ip**, lnstat, nstat, rtmon, ss, tc)
+- iproute2: bridge, ctstat, ⭐ ip, lnstat, nstat, rtmon, ss, tc
 - jq
 - less
 - lsd
@@ -27,11 +27,11 @@ Ubuntu 24.04 with the following extra features:
 - nc
 - nmap
 - ping
-- ripgrep / rg
+- rg
 - sd
 - ssh
 - starship
-- task (go-task)
+- task
 - tree
 - unzip
 - wget
