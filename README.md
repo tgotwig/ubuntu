@@ -17,7 +17,7 @@ Ubuntu 24.04 with the following extra features:
 - fdfind
 - fish
 - git
-- gnupg
+- gpg
 - iproute2: bridge, ctstat, ⭐ ip, lnstat, nstat, rtmon, ss, tc
 - jq
 - less
