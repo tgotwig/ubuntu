@@ -22,6 +22,7 @@ RUN apt update && apt install -y --no-install-recommends \
   openssh-client \
   ripgrep \
   sd \
+  stow \
   tree \
   unzip \
   wget && \
@@ -35,19 +36,13 @@ RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings
   rm -rf /var/lib/apt/lists/*
 
 RUN echo "[1/5] Installing atuin..." && \
-  curl -fsSL https://setup.atuin.sh | bash && \
-  mkdir -p /root/.config/fish && \
-  echo 'fish_add_path /root/.cargo/bin' > /root/.config/fish/config.fish && \
-  echo 'atuin init fish | source' >> /root/.config/fish/config.fish
+  curl -fsSL https://setup.atuin.sh | bash
 
 RUN echo "[2/5] Installing zoxide..." && \
-  curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh && \
-  echo 'fish_add_path /root/.local/bin' >> /root/.config/fish/config.fish && \
-  echo 'zoxide init fish | source' >> /root/.config/fish/config.fish
+  curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 
 RUN echo "[3/5] Installing starship..." && \
-  curl -sS https://starship.rs/install.sh | sh -s -- -y && \
-  echo 'starship init fish | source' >> /root/.config/fish/config.fish
+  curl -sS https://starship.rs/install.sh | sh -s -- -y
 
 RUN echo "[4/5] Installing Task runner..." && \
   sh -c "$(wget -qO- https://taskfile.dev/install.sh)" -- -d -b /usr/local/bin
@@ -74,15 +69,11 @@ RUN echo "[6/6] Installing ASDF..." && \
   | tar -xzf - -C /opt/asdf && \
   ln -s /opt/asdf/asdf /usr/local/bin/asdf && \
   mkdir -p /usr/local/etc/fish/conf.d && \
-  wget -qO /usr/local/etc/fish/conf.d/asdf.fish "https://raw.githubusercontent.com/asdf-vm/asdf/refs/tags/v0.16.7/asdf.fish" && \
-  echo 'source /usr/local/etc/fish/conf.d/asdf.fish' >> /root/.config/fish/config.fish && \
-  echo 'asdf completion fish | source' >> /root/.config/fish/config.fish
+  wget -qO /usr/local/etc/fish/conf.d/asdf.fish "https://raw.githubusercontent.com/asdf-vm/asdf/refs/tags/v0.16.7/asdf.fish"
 
-COPY conf/lsd/* /root/.config/lsd/
-RUN echo 'abbr ls lsd' >> /root/.config/fish/config.fish
-RUN echo 'abbr ll lsd -la' >> /root/.config/fish/config.fish
+COPY dotfiles/ /root/dotfiles/
 
-COPY conf/starship.toml /root/.config/starship.toml
+RUN cd /root/dotfiles && stow */
 
 SHELL ["/usr/bin/fish", "-c"]
 

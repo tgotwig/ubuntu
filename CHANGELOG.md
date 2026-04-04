@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- task autocompletion
+- stow for managing dotfiles
+- lln abbreviation for just listing file names
+
 ## 🎉 [0.0.5] - 2025-12-16
 
 ### Added
