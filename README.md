@@ -31,6 +31,7 @@ Ubuntu 24.04 with the following extra features:
 - sd
 - ssh
 - starship
+- stow
 - task
 - tree
 - unzip

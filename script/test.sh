@@ -11,7 +11,6 @@ echo "[dig]" && dig -v
 echo "[docker]" && docker --version
 echo "[dust]" && dust --version
 echo "[fd]" && fdfind --version
-echo "[nslookup]" && nslookup -version
 echo "[fish]" && fish -v
 echo "[gpg]" && gpg --version | head -1
 echo "[ip]" && ip -V
@@ -22,11 +21,13 @@ echo "[mediainfo]" && mediainfo --Version
 echo "[micro]" && micro -version
 echo "[nc]" && nc -h 2>&1 | head -1
 echo "[nmap]" && nmap --version | head -2
+echo "[nslookup]" && nslookup -version
 echo "[ping]" && ping -V
 echo "[rg]" && rg --version | head -1
 echo "[sd]" && sd --version
 echo "[ssh]" && ssh -V 2>&1 | head -1
 echo "[starship]" && starship --version
+echo "[stow]" && stow --version
 echo "[task]" && task --version
 echo "[tree]" && tree --version
 echo "[unzip]" && unzip -v | head -1
